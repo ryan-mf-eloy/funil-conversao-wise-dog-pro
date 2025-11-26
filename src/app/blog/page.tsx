@@ -1,5 +1,8 @@
 "use client";
 
+import React from "react";
+import { Header } from "@/components/common/Header";
+import { FooterTapedDesign } from "@/components/ui/footer-taped-design";
 import { Calendar, Clock, ArrowRight, User } from "lucide-react";
 import Link from "next/link";
 
@@ -52,9 +55,15 @@ const blogPosts: BlogPost[] = [
 ];
 
 export default function BlogPage() {
+  const handleStartClick = () => {
+    window.location.href = "/";
+  };
+
   return (
-    <div className="min-h-screen bg-white">
-      {/* Hero Section */}
+    <div className="flex flex-col min-h-screen bg-[#FAFAF9]">
+      <div className="flex-1">
+        <Header onStartClick={handleStartClick} hideAnchorLinks={true} />
+        {/* Hero Section */}
       <section className="bg-gradient-to-br from-[#EFE988] to-[#D4C65D] py-20 px-4">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-5xl md:text-6xl font-bold text-black mb-6">
@@ -144,7 +153,7 @@ export default function BlogPage() {
             Comece hoje mesmo com um plano personalizado de treinamento
           </p>
           <Link
-            href="/quiz"
+            href="/"
             className="inline-block px-8 py-4 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
           >
             Começar Agora - 7 Dias Grátis
@@ -179,6 +188,8 @@ export default function BlogPage() {
           </p>
         </div>
       </section>
+      </div>
+      <FooterTapedDesign />
     </div>
   );
 }

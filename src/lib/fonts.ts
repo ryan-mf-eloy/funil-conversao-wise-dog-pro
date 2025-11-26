@@ -47,6 +47,7 @@ import '@fontsource/jetbrains-mono/600.css'
  */
 export const fontFamilies = {
   // Sans-serif fonts
+  spaceGrotesk: '"Space Grotesk", ui-sans-serif, system-ui, sans-serif',
   geist: '"Geist Sans", ui-sans-serif, system-ui, sans-serif',
   inter: '"Inter", ui-sans-serif, system-ui, sans-serif',
   roboto: '"Roboto", ui-sans-serif, system-ui, sans-serif',
@@ -63,6 +64,7 @@ export const fontFamilies = {
  * CSS custom properties for fonts (use in globals.css)
  */
 export const fontCSSVars = `
+  --font-space-grotesk: ${fontFamilies.spaceGrotesk};
   --font-geist-sans: ${fontFamilies.geist};
   --font-geist-mono: ${fontFamilies.geistMono};
   --font-inter: ${fontFamilies.inter};
@@ -79,6 +81,7 @@ export const fontCSSVars = `
  */
 export const tailwindFontConfig = {
   fontFamily: {
+    'space-grotesk': ['var(--font-space-grotesk)'],
     'geist-sans': ['var(--font-geist-sans)'],
     'geist-mono': ['var(--font-geist-mono)'],
     'inter': ['var(--font-inter)'],
